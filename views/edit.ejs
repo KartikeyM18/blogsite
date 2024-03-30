@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<head>
+    <link rel="stylesheet" href="create.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/update" method="post">
+
+            <h1>Title</h1>
+            <input type="text" name="title" value="<%=title%>" >
+            
+            <h1>Content</h1>
+            <textarea type="text" name="content"   rows="8" ><%=content%></textarea>
+    
+            <input id="create" class="btn" type="submit" value="Update" name="<%= index %>">
+        </form>    
+
+    </div>
+    
+
+    
+</body>

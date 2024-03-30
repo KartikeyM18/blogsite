@@ -1,0 +1,51 @@
+
+<%- include("partials/header.ejs") %>
+
+<head>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <div id="nav-bar">
+        <a href="/">
+            <h1>Blogsite</h1>
+        </a>
+    </div>
+
+    <div class="container">
+        <a href="/create">
+            <input class="btn" id="create" type="button" value="Create">
+        </a>
+
+        <div class="card-container">
+            <% if(locals.title){ %>
+                <% for( let i = 0; i<title.length; i++){ %>
+                    
+                        <div class="card">
+                            <h1 class="title">
+                                <%= title[i] %>    
+                            </h1>
+                
+                            <p class="content"><%= content[i] %></p>
+                            <form action="/edit" method="post">
+                                <input class="btn" type="submit" value="Delete" name="del <%= i %>">
+                                <input class="btn" type="submit" value="Edit" name="edit <%= i %>">
+                            </form>
+        
+                            
+                        </div>
+                    
+                    
+                <% } %>
+                
+            <% } %>
+        </div>
+    
+        
+    </div>
+
+    
+    
+
+
+</body>
+</html>
